@@ -4,6 +4,13 @@ The **Bu**tane **Py**thon Toolkit
 
 Bupy was built to help users develop Butane configurations for Fedora CoreOS quickly on their workstations. It allows you to convert Butane YAML to Ignition JSON and render Butane Jinja2 templates to either Butane YAML or Ignition JSON. You can then use your Butane file or template to launch a local QEMU Virtual Machine.
 
+### Requirements
+
+* [Python 3.8.10^](https://www.python.org/downloads/)
+* [butane](https://coreos.github.io/butane/)
+* [qemu](https://www.qemu.org/download/)
+* If possible, a positive attitude
+
 ### Roadmap
 - [x] Convert Support
 - [x] Jinja2 Template Support
@@ -11,7 +18,6 @@ Bupy was built to help users develop Butane configurations for Fedora CoreOS qui
 - [ ] Merge Butane YAML (snippets)
 - [ ] Serve Ignition JSON via HTTP
 - [ ] Libvirt support
-
 
 ### Demo
 
@@ -55,3 +61,23 @@ You can watch a quick demo of Bupy on Youtube.
   │ template     Render Butane Jinja2 templates                                                      │
   ╰──────────────────────────────────────────────────────────────────────────────────────────────────╯
   ```
+
+## License
+
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+                          Copyright 2022 QuickVM, LLC
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
