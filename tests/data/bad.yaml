@@ -1,0 +1,28 @@
+---
+passwd:
+  users:
+  - name: core
+    sshkey:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEmTTqLpDYDfxKgCEVcbCNZxaI25rjbHlnhdCfKajHS1 bupy@quickvm.com
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEmTTqLpDYDfxKgCEVcbCNZxaI25rjbHlnhdCfKajHS1 bupy@quickvm.com
+  - name: bluey
+    groups:
+      - sudo
+      - wheel
+      - gooddogs
+    sshkey:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEmTTqLpDYDfxKgCEVcbCNZxaI25rjbHlnhdCfKajHS1 bupy@quickvm.com
+  - name: bingo
+    groups:
+      - gooddogs
+    sshkey:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEmTTqLpDYDfxKgCEVcbCNZxaI25rjbHlnhdCfKajHS1 bupy@quickvm.com
+  - name: bandit
+    group:
+      - gooddogs
+  - name: chili
+  groups:
+    - name: gooddogs
+hostname: testing
+domain_name: quickvm.com
+domain_name: foo

@@ -1,0 +1,42 @@
+variant: fcos
+version: 1.4.0
+
+passwd:
+  users:
+{%- for item in passwd.users %}
+{%- if item.key %}
+  - name: {{ item.name }}
+    groups:
+{%- if item.groups %}
+{%- for item in item.groups %}
+      - {{ item.group }}
+{%- endfor %}
+{%- endif %}
+    ssh_authorized_keys:
+{%- if item.ssh_key %}
+{%- for item in item.ssh_key %}
+      - {{ item.ssh_key }}
+{%- endfor %}
+{%- endif %}
+{%- endif %}
+{%- endfor %}
+
+storage:
+  files:
+  - path: /etc/hostname
+    mode: 0644
+    overwrite: true
+    contents:
+      inline: {{ hostname }}.{{  }}
+
+  - path: /etc/systemd/zram-generator.conf
+    mode: 0644
+    contents:
+      inline: |
+        # This config file enables a /dev/zram0 device with the default settings
+        [zram0]
+
+  - path: /etc/sysctl.d/20-silence-audit.conf
+    contents:
+      inline: |
+        kernel.printk=4
