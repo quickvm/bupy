@@ -28,7 +28,7 @@ readme = "README.md"
 bupy = "bupy.cli:app"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.8.10"
 typer = {extras = ["all"], version = "^0.6.1"}
 pyxdg = "^0.28"
 urllib3 = "^1.26.10"
