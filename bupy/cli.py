@@ -89,7 +89,10 @@ def vm(
         show_default=False,
     ),
     template: str = typer.Option(
-        "", "--template", "-t", help="Read file as a Jinja2 template and load a variables file."
+        "",
+        "--template",
+        "-t",
+        help="Read file as a Jinja2 template and load a variables file.\n(--template bupyvars.yaml template.bu.j2)",
     ),
     write: str = typer.Option("", "--write", "-w", help="Write the Ignition JSON to a file."),
     force: bool = typer.Option(False, "--force", "-f", help="Overwrite an existing Ignition file."),
