@@ -211,9 +211,12 @@ def template(
     with util.SilenceTemplateException():
         if show:
             bu = tpl.rendered_template(template, tpl.read_template_vars(variables)).decode("utf-8")
-            syntax = Syntax(bu, "YAML", line_numbers=line_numbers)
-            console = Console(color_system=None)
-            console.print(syntax)
+            if sys.stdout.isatty():
+                syntax = Syntax(bu, "YAML", line_numbers=line_numbers)
+                console = Console(color_system=None)
+                console.print(syntax)
+            else:
+                print(bu)
             raise typer.Exit()
 
         # TODO: Add support for finding bupyvars.yaml file in CWD, or in the directory the template resides in.
