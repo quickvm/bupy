@@ -44,8 +44,15 @@ def launch(ram: int, qcow: str, ign: str, ports: List[int]) -> int:
 
     joined_hostfwd = ",".join(hostfwd_list)
 
-    qemu_cmd = f"qemu-system-x86_64 -m {ram} -enable-kvm -cpu host -snapshot -daemonize \
-        -drive if=virtio,file={qcow} -name bupy-vm-{ssh_port} \
+    qemu_cmd = f"qemu-system-x86_64 \
+        -m {ram} \
+        -enable-kvm \
+        -cpu host \
+        -snapshot \
+        -daemonize \
+        -display none \
+        -drive if=virtio,file={qcow} \
+        -name bupy-vm-{ssh_port} \
         -fw_cfg name=opt/com.coreos/config,file={ign} \
         -nic user,model=virtio,{joined_hostfwd}"
     qemu_cmd_split = shlex.split(qemu_cmd)
