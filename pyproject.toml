@@ -29,15 +29,16 @@ bupy = "bupy.cli:app"
 
 [tool.poetry.dependencies]
 python = "^3.8.10"
-typer = {extras = ["all"], version = "^0.6.1"}
+typer = {extras = ["all"], version = "^0.7.0"}
 pyxdg = "^0.28"
 urllib3 = "^1.26.10"
 Jinja2 = "^3.1.2"
 "ruamel.yaml" = "^0.17.21"
 rich = "^12.5.1"
+pip = "^23.0.1"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
+pytest = "^7.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
