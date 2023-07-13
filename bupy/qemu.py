@@ -20,7 +20,7 @@ def find_port() -> int:
     return port
 
 
-def check_port(port) -> bool:
+def check_port(port: int) -> bool:
     """
     Check to see if a port is available to use
     """
@@ -35,7 +35,7 @@ def check_port(port) -> bool:
     return result
 
 
-def validate_port_format(port) -> int:
+def validate_port_format(port: str) -> bool:
     """
     Validate port format. The port has to be between 1 and 65535 as a single number (8080) or a port pair (8080:80)
     """
@@ -43,7 +43,7 @@ def validate_port_format(port) -> int:
     pattern = rf"^{range_expression}$|^{range_expression}:{range_expression}$"
     match = re.match(pattern, port)
     if match:
-        return port
+        return True
     else:
         rprint(
             f"[bold red]Error:[/bold red] The port {port} is not between 1 - 65535 and input as a single number (8080) or a port pair (8080:80)!"
