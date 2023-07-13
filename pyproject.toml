@@ -1,3 +1,31 @@
+[tool.poetry]
+name = "bupy"
+version = "0.1.1"
+description = "A Python toolkit for Butane and Ignition"
+authors = ["QuickVM <hello@quickvm.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+bupy = "bupy.cli:app"
+
+[tool.poetry.dependencies]
+python = "^3.8.10"
+typer = {extras = ["all"], version = "^0.9.0"}
+pyxdg = "^0.28"
+urllib3 = "^1.26.10"
+Jinja2 = "^3.1.2"
+"ruamel.yaml" = "^0.17.21"
+rich = "^13.4.2"
+pip = "^23.0.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.7.0"
+pytest = "^7.4.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
 [tool.black]
 line-length = 102
 target-version = ['py38',]
@@ -14,32 +42,3 @@ exclude = '''
   | pycache
 )/
 '''
-
-
-
-[tool.poetry]
-name = "bupy"
-version = "0.1.1"
-description = "A Python toolkit for Butane and Ignition"
-authors = ["QuickVM <hello@quickvm.com>"]
-readme = "README.md"
-
-[tool.poetry.scripts]
-bupy = "bupy.cli:app"
-
-[tool.poetry.dependencies]
-python = "^3.8.10"
-typer = {extras = ["all"], version = "^0.7.0"}
-pyxdg = "^0.28"
-urllib3 = "^1.26.10"
-Jinja2 = "^3.1.2"
-"ruamel.yaml" = "^0.17.21"
-rich = "^12.5.1"
-pip = "^23.0.1"
-
-[tool.poetry.dev-dependencies]
-pytest = "^7.2"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
