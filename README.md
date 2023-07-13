@@ -12,12 +12,14 @@ Bupy was built to help users develop Butane configurations for Fedora CoreOS qui
 * If possible, a positive attitude
 
 ### Roadmap
-- [x] Convert Support
-- [x] Jinja2 Template Support
-- [x] Launch a local QEMU FCOS VM
-- [ ] Merge Butane YAML (snippets)
-- [ ] Serve Ignition JSON via HTTP
-- [ ] Libvirt support
+
+* [x] Convert Support
+
+* [x] Jinja2 Template Support
+* [x] Launch a local QEMU FCOS VM
+* [ ] Merge Butane YAML (snippets)
+* [ ] Serve Ignition JSON via HTTP
+* [ ] Libvirt support
 
 ### Demo
 
@@ -28,56 +30,45 @@ You can watch a quick demo of Bupy on Youtube.
 ### Development
 
 1) Clone this repo
-1) Install dependencies
-  ```
-  poetry install
-  ```
-1) Activate a poetry shell
-  ```
-  $ poetry shell
-  Spawning shell within /home/jdoss/src/quickvm/bupy/.venv
-  . /home/jdoss/src/quickvm/bupy/.venv/bin/activate
-  $ . /home/jdoss/src/quickvm/bupy/.venv/bin/activate
-  ```
-1) Make changes...
-1) See them in action
-  ```
-  (.venv) $ python -m bupy --help
+2) Install dependencies
 
-   Usage: bupy [OPTIONS] COMMAND [ARGS]...
+```bash
+poetry install
+```
 
-  ╭─ Options ────────────────────────────────────────────────────────────────────────────────────────╮
-  │ --version             -v        Show the version and exit.                                       │
-  │ --install-completion            Install completion for the current shell.                        │
-  │ --show-completion               Show completion for the current shell, to copy it or customize   │
-  │                                 the installation.                                                │
-  │ --help                          Show this message and exit.                                      │
-  ╰──────────────────────────────────────────────────────────────────────────────────────────────────╯
-  ╭─ Commands ───────────────────────────────────────────────────────────────────────────────────────╮
-  │ convert      Converts Butane YAML to Ignition JSON                                               │
-  │ merge        Merge Butane files together                                                         │
-  │ qemu         Launches a QEMU VM with the specified Ignition JSON or Butane YAML                  │
-  │ serve        Serve an ignition file via HTTP on a specified port                                 │
-  │ template     Render Butane Jinja2 templates                                                      │
-  ╰──────────────────────────────────────────────────────────────────────────────────────────────────╯
+3) Activate a poetry shell
+
+```bash
+poetry shell
+```
+
+4) Make changes...
+5) See them in action
+
+```bash
+bupy --help
+
+ Usage: bupy [OPTIONS] COMMAND [ARGS]...
+
+ Bupy: Butane Python toolkit.
+
+╭─ Options ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ --version             -v        Show the version and exit.                                                                                                                                                 │
+│ --install-completion            Install completion for the current shell.                                                                                                                                  │
+│ --show-completion               Show completion for the current shell, to copy it or customize the installation.                                                                                           │
+│ --help                          Show this message and exit.                                                                                                                                                │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+╭─ Commands ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ convert                      Converts Butane YAML to Ignition JSON                                                                                                                                         │
+│ template                     Renders a Jinja2 Template to Butane YAML or Ignition JSON                                                                                                                     │
+│ vm                           Launches a QEMU VM with a Butane YAML or Jinja2 Template                                                                                                                      │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+ Made in ✶✶✶✶ Chicago✶✶✶✶  〜 (c) 2023 QuickVM, LLC
   ```
 
 ## License
 
-                                 Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
+[Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0>)
 
-                          Copyright 2022 QuickVM, LLC
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+Copyright 2023 QuickVM, LLC

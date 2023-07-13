@@ -16,7 +16,7 @@ app = typer.Typer(
     help="[bold]Bupy:[/bold] [bold]Bu[/bold]tane [bold]Py[/bold]thon toolkit.",
     rich_markup_mode="rich",
     no_args_is_help=True,
-    epilog="Made in [pale_turquoise1]✶✶✶✶[/pale_turquoise1] [red1]Chicago[/red1][pale_turquoise1]✶✶✶✶[/pale_turquoise1]  〜 (c) 2022 QuickVM, LLC",
+    epilog="Made in [pale_turquoise1]✶✶✶✶[/pale_turquoise1] [red1]Chicago[/red1][pale_turquoise1]✶✶✶✶[/pale_turquoise1]  〜 (c) 2023 QuickVM, LLC",
     pretty_exceptions_show_locals=False,
 )
 
@@ -109,11 +109,11 @@ def vm(
         help="Fedora CoreOS arch: aarch64, s390x, x86_64",
     ),
     ram: int = typer.Option(1024, "--ram", "-r", help="RAM amount in MB"),
-    ports: Optional[List[int]] = typer.Option(
+    ports: Optional[List[str]] = typer.Option(
         None,
         "--port",
         "-p",
-        help="Map random host ports to VM ports. Can be used many times.",
+        help="Pass a single port number (8080) to map a random host port to the VM port. Pass 8080:80 to assign a static host port to the VM port. The --port option can be used many times. The port range allowed is 1 - 65535.",
     ),
 ):
     """
@@ -189,7 +189,7 @@ def template(
         help="Reads a YAML file to use as variables for rendering a Jinja2 template.",
     ),
     show: bool = typer.Option(
-        False, "--show", "-s", help="rPrint the rendered template.", show_default=False
+        False, "--show", "-s", help="Print the rendered template.", show_default=False
     ),
     line_numbers: bool = typer.Option(
         True, "--numbers", "-n", help="Show line numbers in printed template."
