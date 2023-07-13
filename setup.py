@@ -14,7 +14,7 @@ entry_points = {"console_scripts": ["bupy = bupy.cli:app"]}
 
 setup_kwargs = {
     "name": "bupy",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "A Python toolkit for Butane and Ignition",
     "author": "QuickVM",
     "author_email": "hello@quickvm.com",

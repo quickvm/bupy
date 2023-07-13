@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bupy"
-version = "0.1.1"
+version = "0.1.2"
 description = "A Python toolkit for Butane and Ignition"
 authors = ["QuickVM <hello@quickvm.com>"]
 readme = "README.md"
