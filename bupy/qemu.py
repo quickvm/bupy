@@ -35,7 +35,7 @@ def check_port(port) -> bool:
     return result
 
 
-def validate_port_format(port):
+def validate_port_format(port) -> int:
     """
     Validate port format. The port has to be between 1 and 65535 as a single number (8080) or a port pair (8080:80)
     """
