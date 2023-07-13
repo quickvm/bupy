@@ -5,14 +5,10 @@ packages = ["bupy"]
 
 package_data = {"": ["*"]}
 
-install_requires = [
-    "Jinja2>=3.1.2,<4.0.0",
-    "pyxdg>=0.28,<0.29",
-    "rich>=12.5.1,<13.0.0",
-    "ruamel.yaml>=0.17.21,<0.18.0",
-    "typer[all]>=0.6.1,<0.7.0",
-    "urllib3>=1.26.10,<2.0.0",
-]
+with open("requirements.txt") as f:
+    required = f.read().splitlines()
+
+install_requires = required
 
 entry_points = {"console_scripts": ["bupy = bupy.cli:app"]}
 
