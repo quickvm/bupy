@@ -16,7 +16,7 @@ app = typer.Typer(
     help="[bold]Bupy:[/bold] [bold]Bu[/bold]tane [bold]Py[/bold]thon toolkit.",
     rich_markup_mode="rich",
     no_args_is_help=True,
-    epilog="Made in [pale_turquoise1]✶✶✶✶[/pale_turquoise1] [red1]Chicago[/red1][pale_turquoise1]✶✶✶✶[/pale_turquoise1]  〜 (c) 2022 QuickVM, LLC",
+    epilog="Made in [pale_turquoise1]✶✶✶✶[/pale_turquoise1] [red1]Chicago[/red1][pale_turquoise1]✶✶✶✶[/pale_turquoise1]  〜 (c) 2023 QuickVM, LLC",
     pretty_exceptions_show_locals=False,
 )
 
