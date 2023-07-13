@@ -1,3 +1,4 @@
+import os
 import re
 import shlex
 import socket
@@ -87,10 +88,22 @@ def launch(ram: int, qcow: str, ign: str, ports: List[str]) -> int:
 
     joined_hostfwd = ",".join(hostfwd_list)
 
-    qemu_cmd = f"qemu-system-x86_64 -m {ram} -enable-kvm -cpu host -snapshot -daemonize \
-        -drive if=virtio,file={qcow} -name bupy-vm-{ssh_port} \
+    if not os.environ.get("DISPLAY"):
+        display = "-display none"
+    else:
+        display = ""
+
+    qemu_cmd = f"qemu-system-x86_64 \
+        -m {ram} \
+        -enable-kvm \
+        -cpu host \
+        -snapshot \
+        -daemonize \
+        -drive if=virtio,file={qcow} \
+        -name bupy-vm-{ssh_port} \
         -fw_cfg name=opt/com.coreos/config,file={ign} \
-        -nic user,model=virtio,{joined_hostfwd}"
+        -nic user,model=virtio,{joined_hostfwd} \
+        {display}"
     qemu_cmd_split = shlex.split(qemu_cmd)
 
     rprint("Launching QEMU VM...")
